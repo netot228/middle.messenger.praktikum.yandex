@@ -1,0 +1,12 @@
+.registration {
+  @extend %entryForm;
+
+  &-btn-place {
+    position: relative;
+    width: 100%;
+    display: inline-flex;
+    flex-flow: column;
+    gap: $gap * 3;
+    margin-top: $gap * 4;
+  }
+}

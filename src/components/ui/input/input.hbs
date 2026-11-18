@@ -1,0 +1,18 @@
+<div class='input {{class_modificator}}'>
+  <input
+    type='{{type}}'
+    placeholder='{{label}}'
+    name='{{name}}'
+    id='{{input_id}}'
+    class='input-field'
+  />
+
+  <label for='{{input_id}}' class='input-label'>{{label}}</label>
+
+  {{#if alert_message}}
+    <span class='input-alert'>
+      {{alert_message}}
+    </span>
+  {{/if}}
+
+</div>

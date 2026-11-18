@@ -1,3 +1,4 @@
+import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -6,10 +7,17 @@ export default defineConfig({
     strictPort: true,
     open: true,
   },
+  resolve: {
+    // прописываем алиас, чтобы корректно подключить стили для всех scss модулей
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
+  },
   css: {
     preprocessorOptions: {
+      // добавляем настройку, чтобы во все .scss файлы подключались переменные
       scss: {
-        additionalData: `@use "@/styles/vars" as *;`,
+        additionalData: `@use "@/styles/_vars" as *;`,
       },
     },
   },

@@ -1,0 +1,31 @@
+<div class='login'>
+
+  <!-- выводим статику с формой без экшенов на сабмит -->
+  <form class="form">
+
+    <h1 class="form-title">{{title}}</h1>
+
+    {{> TextInput
+        type="text"
+        name='login'
+        input_id="_id_input_login"
+        label="Логин" }}
+
+    {{> TextInput
+        type="password"
+        name='password'
+        input_id="_id_input_password"
+        label="Пароль" }}
+
+
+    <div class="login-btn-place">
+      <!--  ActionButton пока будет просто button -->
+      {{> ActionButton button_type='button' title="Войти" }}
+      {{!-- {{> MinorButton button_type='button' title="Регистрация" }} --}}
+      {{!-- пока навигацию будем делать через хеш --}}
+      {{> ActionLink href="/#page=registration" text="Регистрация" class_modificator="likeBtn"}}
+    </div>
+
+  </form>
+
+</div>

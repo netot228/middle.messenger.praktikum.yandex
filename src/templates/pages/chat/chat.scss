@@ -1,0 +1,17 @@
+.chat {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  &-aside {
+    position: absolute;
+    top: $gap;
+    bottom: $gap;
+    left: $gap;
+    width: 30%;
+    max-width: 360px;
+    min-width: 200px;
+    background: red;
+    border-radius: 10px;
+  }
+}

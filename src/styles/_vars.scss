@@ -1,3 +1,16 @@
+$gap: 0.8rem;
+@for $i from 1 through 10 {
+  .pt#{$i} {
+    padding-top: calc(#{$i}*#{$gap});
+  }
+  .mb#{$i} {
+    margin-bottom: calc(#{$i}*#{$gap});
+  }
+}
+
+$sans: 'Source Sans 3', sans-serif;
+$serif: georgia, serif;
+
 @mixin setLightThemeVariables {
   // this rule
   // color-scheme: light dark;
@@ -6,6 +19,17 @@
   color-scheme: only light;
 
   --bg-color: #f1f4fc;
+  --bg-color-contrast: #202020;
+  --color-contrast: #f1f4fc;
+
+  --stroke-color: #dfdfdf;
+
+  --main: #333;
+  --action: #3369f3;
+  --action-hover: #5e8bff;
+  --gray: #969696;
+
+  --accent: #c9181e;
 }
 %setLightThemeVariables {
   @include setLightThemeVariables;
@@ -19,6 +43,17 @@
   color-scheme: only dark;
 
   --bg-color: #202020;
+  --bg-color-contrast: #f1f4fc;
+  --color-contrast: #202020;
+
+  --stroke-color: #5e5e5e;
+
+  --main: #ccc;
+  --action: #3369f3;
+  --action-hover: #779dff;
+  --gray: #969696;
+
+  --accent: #ff2121;
 }
 
 %setDarkThemeVariables {
@@ -55,4 +90,13 @@
   @media screen and (max-height: $size) {
     @content;
   }
+}
+
+// базовые extends для некоторых повторяющихся элементов
+%entryForm {
+  position: relative;
+  margin: auto;
+  padding: 2rem 0 2rem 30px;
+  border-left: 2px solid var(--stroke-color);
+  width: 340px;
 }

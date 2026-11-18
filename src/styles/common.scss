@@ -1,8 +1,145 @@
-// @use 'reset';
-@use 'vars' as *;
+@use 'reset';
 
+html,
 body {
-  font-size: 0;
-  line-height: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  // font-size: 0;
+  // line-height: 0;
+
   background: var(--bg-color);
+  ::selection {
+    color: var(--color-contrast);
+    background-color: var(--bg-color-contrast);
+  }
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ui elements
+.form {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: start;
+  gap: $gap * 4;
+
+  &-title {
+    font: 700 1.8rem/1 $sans;
+    color: var(--main);
+    margin-bottom: $gap * 2;
+  }
+}
+
+.input {
+  $inputHeight: 34px;
+  position: relative;
+  display: inline-flex;
+  width: 100%;
+  flex-flow: column;
+  align-items: stretch;
+  justify-content: start;
+  gap: $gap;
+
+  &-label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    font: 400 1.2rem/1 $sans;
+    color: var(--gray);
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+  }
+
+  &-field {
+    width: 100%;
+    height: $inputHeight;
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0 0.4rem;
+    font: 700 1.6rem/1 $sans;
+    color: var(--main);
+    border-bottom: 1px solid var(--stroke-color);
+
+    // сбросим в базе цветовые предпочтения браузера
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      box-shadow: inset 0 0 0 1000px var(--bg-color) !important;
+      -webkit-text-fill-color: var(--main) !important;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      & + label {
+        opacity: 0;
+        transform: translateY(-$inputHeight);
+      }
+    }
+  }
+  &-alert {
+    display: none;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 34px;
+  cursor: pointer;
+  font: 700 1.6rem/1 $sans;
+
+  &-action {
+    background: var(--action);
+    color: #fff;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: var(--action-hover);
+    }
+  }
+  &-minor {
+    font: 500 1.4rem/1 $sans;
+    color: var(--action);
+    transition: color 0.3s ease;
+    &:hover {
+      color: var(--action-hover);
+    }
+  }
+}
+.action-link {
+  font: 500 1.4rem/1 $sans;
+  color: var(--action);
+  transition: color 0.3s ease;
+  &.likeBtn {
+    display: block;
+    min-height: 34px;
+    width: 100%;
+    text-align: center;
+  }
+  &:hover {
+    color: var(--action-hover);
+  }
 }
