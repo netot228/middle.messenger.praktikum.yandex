@@ -38,14 +38,14 @@ $dark: #202020;
   --accent: #c9181e;
 
   // some icons
-  --icon-search: url("/public/img/ui/search_bl.svg");
-  --icon-profile: url("/public/img/ui/profile_bl.svg");
-  --icon-paperclip: url("/public/img/ui/paperclip_bl.svg");
-  --icon-smile: url("/public/img/ui/smile_bl.svg");
-  --icon-plus: url("/public/img/ui/plus_bl.svg");
-  --icon-picture: url("/public/img/ui/picture_bl.svg");
-  --icon-file: url("/public/img/ui/file_bl.svg");
-  --icon-pencil: url("/public/img/ui/pencil_bl.svg");
+  --icon-search: url("/img/ui/search_bl.svg");
+  --icon-profile: url("/img/ui/profile_bl.svg");
+  --icon-paperclip: url("/img/ui/paperclip_bl.svg");
+  --icon-smile: url("/img/ui/smile_bl.svg");
+  --icon-plus: url("/img/ui/plus_bl.svg");
+  --icon-picture: url("/img/ui/picture_bl.svg");
+  --icon-file: url("/img/ui/file_bl.svg");
+  --icon-pencil: url("/img/ui/pencil_bl.svg");
 }
 %setLightThemeVariables {
   @include setLightThemeVariables;
@@ -73,14 +73,14 @@ $dark: #202020;
 
   --accent: #ff2121;
   // some icons
-  --icon-search: url("/public/img/ui/search_wh.svg");
-  --icon-profile: url("/public/img/ui/profile_wh.svg");
-  --icon-paperclip: url("/public/img/ui/paperclip_wh.svg");
-  --icon-smile: url("/public/img/ui/smile_wh.svg");
-  --icon-plus: url("/public/img/ui/plus_wh.svg");
-  --icon-picture: url("/public/img/ui/picture_wh.svg");
-  --icon-file: url("/public/img/ui/file_wh.svg");
-  --icon-pencil: url("/public/img/ui/pencil_wh.svg");
+  --icon-search: url("/img/ui/search_wh.svg");
+  --icon-profile: url("/img/ui/profile_wh.svg");
+  --icon-paperclip: url("/img/ui/paperclip_wh.svg");
+  --icon-smile: url("/img/ui/smile_wh.svg");
+  --icon-plus: url("/img/ui/plus_wh.svg");
+  --icon-picture: url("/img/ui/picture_wh.svg");
+  --icon-file: url("/img/ui/file_wh.svg");
+  --icon-pencil: url("/img/ui/pencil_wh.svg");
 }
 
 %setDarkThemeVariables {

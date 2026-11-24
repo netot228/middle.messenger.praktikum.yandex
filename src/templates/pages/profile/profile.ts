@@ -22,7 +22,7 @@ const profileData: ProfileData = {
   name: "Eric",
   surname: "Cartman",
   phone: "+7 (977) 123-45-67",
-  avatar: "/public/img/tmp_avatars/profile.jpg",
+  avatar: "/img/tmp_avatars/profile.jpg",
 };
 
 export default function renderProfile(): HTMLElement {

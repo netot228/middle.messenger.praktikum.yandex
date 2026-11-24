@@ -2,7 +2,7 @@
   "chat": {
     "id": "chat_1042",
     "title": "Дизайн-ревью лендинга",
-    "avatar": "/public/img/tmp_avatars/15.jpg",
+    "avatar": "/img/tmp_avatars/15.jpg",
     "messages": [
       {
         "id": 1,
@@ -32,8 +32,8 @@
       {
         "id": 6,
         "sender": "companion",
-        "image": "/public/img/tmp_chat/1.jpg",
-        "html": "<div class=\"msg companion has-image\"><img src=\"/public/img/tmp_chat/1.jpg\" alt=\"Скриншот мобильной версии\">Вот скрин, как это выглядит у меня на телефоне</div>"
+        "image": "/img/tmp_chat/1.jpg",
+        "html": "<div class=\"msg companion has-image\"><img src=\"/img/tmp_chat/1.jpg\" alt=\"Скриншот мобильной версии\">Вот скрин, как это выглядит у меня на телефоне</div>"
       },
       {
         "id": 7,
@@ -43,8 +43,8 @@
       {
         "id": 8,
         "sender": "self",
-        "image": "/public/img/tmp_chat/2.jpg",
-        "html": "<div class=\"msg has-image\"><img src=\"/public/img/tmp_chat/2.jpg\" alt=\"Правка кнопки v2\">Уже поправила, вот вариант с усиленной обводкой и чуть меньшим радиусом скругления</div>"
+        "image": "/img/tmp_chat/2.jpg",
+        "html": "<div class=\"msg has-image\"><img src=\"/img/tmp_chat/2.jpg\" alt=\"Правка кнопки v2\">Уже поправила, вот вариант с усиленной обводкой и чуть меньшим радиусом скругления</div>"
       },
       {
         "id": 9,
@@ -64,8 +64,8 @@
       {
         "id": 12,
         "sender": "self",
-        "image": "/public/img/tmp_chat/3.jpg",
-        "html": "<div class=\"msg has-image\"><img src=\"/public/img/tmp_chat/3.jpg\" alt=\"Концепт слайдера отзывов\">Тогда держи концепт слайдера. Пока без анимаций, только структура и отступы</div>"
+        "image": "/img/tmp_chat/3.jpg",
+        "html": "<div class=\"msg has-image\"><img src=\"/img/tmp_chat/3.jpg\" alt=\"Концепт слайдера отзывов\">Тогда держи концепт слайдера. Пока без анимаций, только структура и отступы</div>"
       },
       {
         "id": 13,
@@ -80,8 +80,8 @@
       {
         "id": 15,
         "sender": "companion",
-        "image": "/public/img/tmp_chat/4.jpg",
-        "html": "<div class=\"msg companion has-image\"><img src=\"/public/img/tmp_chat/4.jpg\" alt=\"Референс футера\">И вот референс футера, о котором мы говорили на прошлой неделе. Заказчик просил что-то похожее по плотности</div>"
+        "image": "/img/tmp_chat/4.jpg",
+        "html": "<div class=\"msg companion has-image\"><img src=\"/img/tmp_chat/4.jpg\" alt=\"Референс футера\">И вот референс футера, о котором мы говорили на прошлой неделе. Заказчик просил что-то похожее по плотности</div>"
       },
       {
         "id": 16,
@@ -101,8 +101,8 @@
       {
         "id": 19,
         "sender": "companion",
-        "image": "/public/img/tmp_chat/6.jpg",
-        "html": "<div class=\"msg companion has-image\"><img src=\"/public/img/tmp_chat/6.jpg\" alt=\"Пятничный кофе\">Отлично! А это за мной — в пятницу приношу кофе, нам понадобится выживание перед сдачей проекта</div>"
+        "image": "/img/tmp_chat/6.jpg",
+        "html": "<div class=\"msg companion has-image\"><img src=\"/img/tmp_chat/6.jpg\" alt=\"Пятничный кофе\">Отлично! А это за мной — в пятницу приношу кофе, нам понадобится выживание перед сдачей проекта</div>"
       },
       {
         "id": 20,

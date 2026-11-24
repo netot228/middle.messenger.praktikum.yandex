@@ -26,19 +26,19 @@
 \* ниже примеры ссылок будут указаны для localhost
 
 1. Страница входа [доступна по ссылке](http://localhost:3000/)
-   ![Форма авторизации](/public/img/screens_set/login.jpg)
+   ![Форма авторизации](/img/screens_set/login.jpg)
 
 - есть подсветка требования заполненности поля (подсветится по клику на кнопку войти)
-  ![Форма авторизации](/public/img/screens_set/login_alarm_field.jpg)
+  ![Форма авторизации](/img/screens_set/login_alarm_field.jpg)
 
 2. Страница регистрации [доступна по ссылке](http://localhost:3000/#page=registration)
-   ![Форма регистрации](/public/img/screens_set/registration.jpg)
+   ![Форма регистрации](/img/screens_set/registration.jpg)
 
 - также есть подсветка требования заполненности поля (подсветится по клику на кнопку регистрация)
-  ![Форма авторизации](/public/img/screens_set/registration_alarm.jpg)
+  ![Форма авторизации](/img/screens_set/registration_alarm.jpg)
 
 3. Страница чата [доступна по ссылке](http://localhost:3000/#page=chat)
-   ![Страница чата](/public/img/screens_set/chat_page.jpg)
+   ![Страница чата](/img/screens_set/chat_page.jpg)
    для страницы чата использованы моки:
 
 - мок листинга чатов, структура взята из урока, листинг сгенерирован ИИ
@@ -46,26 +46,26 @@
 
 - для листинга чата был создан хелпер, чтобы, в случае отсутствия аватара вместо картинки подставлялись инициалы
 - для будущей вставки изображений/файлов подставлены инпуты соответствующих типов (input type="file")
-  ![вставки изображений/файлов](/public/img/screens_set/chat_upload_menu.jpg)
+  ![вставки изображений/файлов](/img/screens_set/chat_upload_menu.jpg)
 - добавлен сет эмоджи
-  ![сет эмоджи](/public/img/screens_set/chat_smiles_set.jpg)
+  ![сет эмоджи](/img/screens_set/chat_smiles_set.jpg)
 - всплывашка для добавления/удаления пользователя
-  ![добавления/удаления пользователя](/public/img/screens_set/chat_add_remove_user.jpg)
+  ![добавления/удаления пользователя](/img/screens_set/chat_add_remove_user.jpg)
 
 4. Страница профиля [доступна по ссылке](http://localhost:3000/#page=profile) (можно перейти как из меню, так и с кнопки иконки в шапке навигаци)
-   ![Страница профиля](/public/img/screens_set/profile.jpg)
+   ![Страница профиля](/img/screens_set/profile.jpg)
    внтури страницы профиля также настроены переходы на редактирования данных
 
 - редактирование данных и аплоад аватара
-  ![вставки изображений/файлов](/public/img/screens_set/profile_edit.jpg)
+  ![вставки изображений/файлов](/img/screens_set/profile_edit.jpg)
 - смена пароля
-  ![вставки изображений/файлов](/public/img/screens_set/profile_change_pass.jpg)
+  ![вставки изображений/файлов](/img/screens_set/profile_change_pass.jpg)
 
 5. Страница 404 [доступна по ссылке](http://localhost:3000/#page=404)
-   ![404](/public/img/screens_set/404.jpg)
+   ![404](/img/screens_set/404.jpg)
 
 6. Страница 500 [доступна по ссылке](http://localhost:3000/#page=5xx)
-   ![500](/public/img/screens_set/500.jpg)
+   ![500](/img/screens_set/500.jpg)
 
 ### Файл ReadMe будет дополнятся по мерез разработки проекта
 
