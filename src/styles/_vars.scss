@@ -1,4 +1,4 @@
-$gap: 0.8rem;
+$gap: 8px;
 @for $i from 1 through 10 {
   .pt#{$i} {
     padding-top: calc(#{$i}*#{$gap});
@@ -8,8 +8,12 @@ $gap: 0.8rem;
   }
 }
 
-$sans: 'Source Sans 3', sans-serif;
+$sans: "Source Sans 3", sans-serif;
 $serif: georgia, serif;
+
+// неизменяемые цвета не зависят от цветовой схемы
+$light: #f1f4fc;
+$dark: #202020;
 
 @mixin setLightThemeVariables {
   // this rule
@@ -19,6 +23,7 @@ $serif: georgia, serif;
   color-scheme: only light;
 
   --bg-color: #f1f4fc;
+  --bg-color-light: #d5def6;
   --bg-color-contrast: #202020;
   --color-contrast: #f1f4fc;
 
@@ -28,8 +33,19 @@ $serif: georgia, serif;
   --action: #3369f3;
   --action-hover: #5e8bff;
   --gray: #969696;
+  --color-gray-dark: #757575;
 
   --accent: #c9181e;
+
+  // some icons
+  --icon-search: url("/public/img/ui/search_bl.svg");
+  --icon-profile: url("/public/img/ui/profile_bl.svg");
+  --icon-paperclip: url("/public/img/ui/paperclip_bl.svg");
+  --icon-smile: url("/public/img/ui/smile_bl.svg");
+  --icon-plus: url("/public/img/ui/plus_bl.svg");
+  --icon-picture: url("/public/img/ui/picture_bl.svg");
+  --icon-file: url("/public/img/ui/file_bl.svg");
+  --icon-pencil: url("/public/img/ui/pencil_bl.svg");
 }
 %setLightThemeVariables {
   @include setLightThemeVariables;
@@ -43,6 +59,7 @@ $serif: georgia, serif;
   color-scheme: only dark;
 
   --bg-color: #202020;
+  --bg-color-light: #303030;
   --bg-color-contrast: #f1f4fc;
   --color-contrast: #202020;
 
@@ -52,8 +69,18 @@ $serif: georgia, serif;
   --action: #3369f3;
   --action-hover: #779dff;
   --gray: #969696;
+  --color-gray-dark: #757575;
 
   --accent: #ff2121;
+  // some icons
+  --icon-search: url("/public/img/ui/search_wh.svg");
+  --icon-profile: url("/public/img/ui/profile_wh.svg");
+  --icon-paperclip: url("/public/img/ui/paperclip_wh.svg");
+  --icon-smile: url("/public/img/ui/smile_wh.svg");
+  --icon-plus: url("/public/img/ui/plus_wh.svg");
+  --icon-picture: url("/public/img/ui/picture_wh.svg");
+  --icon-file: url("/public/img/ui/file_wh.svg");
+  --icon-pencil: url("/public/img/ui/pencil_wh.svg");
 }
 
 %setDarkThemeVariables {
@@ -64,7 +91,7 @@ $serif: georgia, serif;
   :root {
     @include setDarkThemeVariables;
   }
-  :root[data-theme='light'] {
+  :root[data-theme="light"] {
     @include setLightThemeVariables;
   }
 }
@@ -73,7 +100,7 @@ $serif: georgia, serif;
   :root {
     @include setLightThemeVariables;
   }
-  :root[data-theme='dark'] {
+  :root[data-theme="dark"] {
     @include setDarkThemeVariables;
   }
 }
@@ -96,7 +123,23 @@ $serif: georgia, serif;
 %entryForm {
   position: relative;
   margin: auto;
-  padding: 2rem 0 2rem 30px;
+  padding: 20px 0 20px 30px;
   border-left: 2px solid var(--stroke-color);
   width: 340px;
+}
+
+// сделаем миксин для скролбара только для вертикального
+@mixin useDecorateScrollBar($trackColor, $thumbColor) {
+  // базовые настройки скролбара поддержка большинством браузеров
+  scrollbar-color: $thumbColor $trackColor;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
+  // ставим чтобы прилипал по оси y
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  // чтобы потомок прилипал вначале
+  & > * {
+    scroll-snap-align: start;
+  }
 }

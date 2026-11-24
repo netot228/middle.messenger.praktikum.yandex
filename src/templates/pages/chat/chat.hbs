@@ -1,8 +1,131 @@
-<div class='chat'>
-  <div class='chat-aside'>
+<div class="chat">
+  <div class="chat-aside">
+
+    <aside class="chat-aside-header">
+
+      {{!-- {{> ActionButton
+        type='button'
+        class_modificator='chat-setting-button'
+      }} --}}
+
+      {{> ActionLink
+        href="/#page=profile"
+        text=""
+        class_modificator="chat-setting-button"
+      }}
+
+      <form class="chat-search">
+        {{> Input
+          type="text"
+          name='search'
+          input_id="_id_input_search"
+          label="Поиск"
+          class_modificator="chat-search-field"
+        }}
+        {{> ActionButton
+          type='submit'
+          class_modificator='chat-search-button'
+        }}
+      </form>
+
+    </aside>
+
+    <div class="chat-list">
+
+      <div class="chat-list-wrapper">
+        {{#each chats}}
+          {{> ChatItem}}
+        {{/each}}
+      </div>
+    </div>
 
   </div>
-  <div class='chat-mainarea'>
+  <div class="chat-mainarea">
+
+    {{#if dialog}}
+      <div class="chat-mainarea-wrapper">
+        <div class="chat-mainarea-header">
+          {{> Avatar
+            avatarUrl=dialog.avatar
+            name=dialog.title
+          }}
+          <div class="title">{{ dialog.title }}</div>
+
+          <div class="menu">
+            {{!-- открытие меню пока по ховеру --}}
+            {{> ActionButton
+              type='button'
+              class_modificator='menu-button'
+            }}
+
+            <div class="menu-content" data-userid="{{ dialog.id }}">
+              {{> ActionLink
+                href="/#page=chat&user_add=true"
+                text="Добавить пользователя"
+                class_modificator="add-user"
+              }}
+              {{!-- пока непонтяно как в строку параметра подставить значение переменной {{ dialog.id }} --}}
+              {{> ActionLink
+                href="/#page=chat&user_delete=true&id=123"
+                text="Удалить пользователя"
+                class_modificator="delete-user"
+              }}
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-mainarea-dialog">
+          <div class="chat-mainarea-dialog-wrapper">
+            {{#each dialog.messages}}
+              <div class="message {{ sender }}" data-messageid="{{ id }}">{{{ html }}}</div>
+            {{/each}}
+          </div>
+
+        </div>
+
+        <div class="chat-mainarea-sendzone">
+          <form class="chat-mainarea-form" action="" data-id="_id_chat_form">
+            <div class="media">
+              {{!-- открытие меню пока по ховеру --}}
+              {{> ActionButton
+                type='button'
+                class_modificator='media-button'
+              }}
+              <div class="media-content">
+                {{> Input
+                  type="file"
+                  name='file'
+                  input_id="_id_send_picture_to_chat"
+                  label="Загрузить картинку"
+                  needLabel="true"
+                  class_modificator="add_picture"
+                }}
+                {{> Input
+                  type="file"
+                  name='file'
+                  input_id="_id_send_file_to_chat"
+                  label="Загрузить файл"
+                  needLabel="true"
+                  class_modificator="add_file"
+                }}
+              </div>
+            </div>
+
+            <textarea
+              id="_id_chat_input"
+              name=""
+              rows="1"
+              data-id="_id_chat_input"
+              placeholder="Сообщение"
+            ></textarea>
+
+            {{> EmojiSet}}
+          </form>
+        </div>
+      </div>
+    {{else}}
+      <div class="chat-mainarea-entry">Выберите чат чтобы отправить сообщение</div>
+    {{/if}}
 
   </div>
 </div>

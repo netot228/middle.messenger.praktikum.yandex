@@ -1,63 +1,88 @@
-<div class='registration'>
+<div class="registration">
 
   <!-- выводим статику с формой без экшенов на сабмит -->
   <form class="form">
 
-    <h1 class="form-title">{{title}}</h1>
+    <h1 class="form-title">{{ title }}</h1>
 
-    {{> TextInput
-        type="text"
-        name='mail'
-        input_id="_id_input_mail"
-        label="Почта"
-        alert_message="Обязательное поле" }}
+    {{> Input
+      type="text"
+      name="mail"
+      input_id="_id_input_mail"
+      needLabel="true"
+      label="Почта"
+      alert_message="Укажите почту"
+      required="required"
+    }}
 
-    {{> TextInput
-        type="text"
-        name='login'
-        input_id="_id_input_login"
-        label="Логин"
-        alert_message="Обязательное поле" }}
+    {{> Input
+      type="text"
+      name="login"
+      input_id="_id_input_login"
+      needLabel="true"
+      label="Логин"
+      alert_message="Обязательное поле"
+      required="required"
+    }}
 
-    {{> TextInput
-        type="text"
-        name='name'
-        input_id="_id_input_name"
-        label="Имя"
-        alert_message="Обязательное поле" }}
+    {{> Input
+      type="text"
+      name="name"
+      input_id="_id_input_name"
+      needLabel="true"
+      label="Имя"
+    }}
 
-    {{> TextInput
-        type="text"
-        name='surname'
-        input_id="_id_input_surname"
-        label="Фамилия" }}
+    {{> Input
+      type="text"
+      name="surname"
+      input_id="_id_input_surname"
+      needLabel="true"
+      label="Фамилия"
+    }}
 
-    {{> TextInput
-        type="text"
-        name='phone'
-        input_id="_id_input_phone"
-        label="Телефон"
-        alert_message="Обязательное поле" }}
+    {{> Input
+      type="text"
+      name="phone"
+      input_id="_id_input_phone"
+      needLabel="true"
+      label="Телефон"
+      alert_message="Укажите свой телефон"
+      required="required"
+    }}
 
-    {{> TextInput
-        type="password"
-        name='password'
-        input_id="_id_input_password"
-        label="Пароль"
-        alert_message="Обязательное поле" }}
+    {{> Input
+      type="password"
+      name="password"
+      input_id="_id_input_password"
+      needLabel="true"
+      label="Пароль"
+      alert_message="Обязательное поле"
+      required="required"
+    }}
 
-    {{> TextInput
-        type="password"
-        name='password_repeat'
-        input_id="_id_input_password_repeat"
-        label="Пароль (еще раз)"
-        alert_message="Обязательное поле" }}
+    {{> Input
+      type="password"
+      name="password_repeat"
+      input_id="_id_input_password_repeat"
+      needLabel="true"
+      label="Пароль (еще раз)"
+      alert_message="Обязательное поле"
+      required="required"
+    }}
 
     <div class="login-btn-place">
-      <!--  ActionButton пока будет просто button -->
-      {{> ActionButton button_type='button' title="Зарегистироваться" }}
-      {{!-- {{> MinorButton button_type='button' title="Регистрация" }} --}}
-      {{> ActionLink href="/" text="Войти" class_modificator="likeBtn"}}
+      {{> ActionButton
+        type='button'
+        title="Зарегистрироваться"
+        class_modificator="registration_submit"
+      }}
+
+      {{> ActionLink
+        href="/#page=login"
+        text="Войти"
+        class_modificator="likeBtn"
+      }}
     </div>
 
   </form>

@@ -1,18 +1,21 @@
-<div class='input {{class_modificator}}'>
+<div class="input {{ class_modificator }}" data-required="{{ required }}">
   <input
-    type='{{type}}'
-    placeholder='{{label}}'
-    name='{{name}}'
-    id='{{input_id}}'
-    class='input-field'
+    id="{{ input_id }}"
+    class="input-field"
+    type="{{ type }}"
+    placeholder="{{ label }}"
+    name="{{ name }}"
+    {{ disabled }}
+    value="{{ value }}"
+    {{ required }}
   />
 
-  <label for='{{input_id}}' class='input-label'>{{label}}</label>
+  {{#if needLabel}}
+    <label class="input-label" for="{{ input_id }}">{{ label }}</label>
 
-  {{#if alert_message}}
-    <span class='input-alert'>
-      {{alert_message}}
-    </span>
+    {{#if alert_message}}
+      <span class="input-alert"> {{ alert_message }} </span>
+    {{/if}}
   {{/if}}
 
 </div>

@@ -1,0 +1,93 @@
+<div class="emoji">
+  {{!-- пока сделаем заглушку и сет будет показываться по ховеру --}}
+  {{> ActionButton
+    type='button'
+    title=""
+    class_modificator="emoji-button"
+  }}
+
+  <div class="emoji-data">
+    {{!-- вот этот эмоджи сет любезно сформировала мне алиса --}}
+    <div class="emoji-tabs">
+      <button class="emoji-tab active" data-group="smiles">😀</button>
+      <button class="emoji-tab" data-group="gestures">👍</button>
+      <button class="emoji-tab" data-group="other">🔥</button>
+    </div>
+
+    <div class="emoji-panel active" data-group="smiles">
+      <button class="emoji-item" data-emoji="&#128512;">&#128512;</button>
+      <button class="emoji-item" data-emoji="&#128515;">&#128515;</button>
+      <button class="emoji-item" data-emoji="&#128516;">&#128516;</button>
+      <button class="emoji-item" data-emoji="&#128513;">&#128513;</button>
+      <button class="emoji-item" data-emoji="&#128514;">&#128514;</button>
+      <button class="emoji-item" data-emoji="&#129315;">&#129315;</button>
+      <button class="emoji-item" data-emoji="&#128522;">&#128522;</button>
+      <button class="emoji-item" data-emoji="&#128578;">&#128578;</button>
+      <button class="emoji-item" data-emoji="&#128521;">&#128521;</button>
+      <button class="emoji-item" data-emoji="&#128525;">&#128525;</button>
+      <button class="emoji-item" data-emoji="&#129392;">&#129392;</button>
+      <button class="emoji-item" data-emoji="&#128536;">&#128536;</button>
+      <button class="emoji-item" data-emoji="&#128540;">&#128540;</button>
+      <button class="emoji-item" data-emoji="&#129322;">&#129322;</button>
+      <button class="emoji-item" data-emoji="&#128526;">&#128526;</button>
+      <button class="emoji-item" data-emoji="&#129321;">&#129321;</button>
+      <button class="emoji-item" data-emoji="&#128527;">&#128527;</button>
+      <button class="emoji-item" data-emoji="&#128528;">&#128528;</button>
+      <button class="emoji-item" data-emoji="&#128580;">&#128580;</button>
+      <button class="emoji-item" data-emoji="&#128558;">&#128558;</button>
+      <button class="emoji-item" data-emoji="&#128561;">&#128561;</button>
+      <button class="emoji-item" data-emoji="&#129300;">&#129300;</button>
+      <button class="emoji-item" data-emoji="&#129327;">&#129327;</button>
+      <button class="emoji-item" data-emoji="&#128550;">&#128550;</button>
+      <button class="emoji-item" data-emoji="&#128557;">&#128557;</button>
+      <button class="emoji-item" data-emoji="&#128545;">&#128545;</button>
+      <button class="emoji-item" data-emoji="&#128544;">&#128544;</button>
+      <button class="emoji-item" data-emoji="&#129324;">&#129324;</button>
+      <button class="emoji-item" data-emoji="&#128564;">&#128564;</button>
+      <button class="emoji-item" data-emoji="&#128520;">&#128520;</button>
+      <button class="emoji-item" data-emoji="&#128123;">&#128123;</button>
+      <button class="emoji-item" data-emoji="&#128128;">&#128128;</button>
+      <button class="emoji-item" data-emoji="&#128169;">&#128169;</button>
+    </div>
+
+    <div class="emoji-panel" data-group="gestures">
+      <button class="emoji-item" data-emoji="&#128077;">&#128077;</button>
+      <button class="emoji-item" data-emoji="&#128078;">&#128078;</button>
+      <button class="emoji-item" data-emoji="&#128076;">&#128076;</button>
+      <button class="emoji-item" data-emoji="&#128079;">&#128079;</button>
+      <button class="emoji-item" data-emoji="&#128591;">&#128591;</button>
+      <button class="emoji-item" data-emoji="&#129305;">&#129305;</button>
+      <button class="emoji-item" data-emoji="&#129303;">&#129303;</button>
+      <button class="emoji-item" data-emoji="&#128170;">&#128170;</button>
+      <button class="emoji-item" data-emoji="&#128064;">&#128064;</button>
+      <button class="emoji-item" data-emoji="&#10084;&#65039;">&#10084;&#65039;</button>
+      <button class="emoji-item" data-emoji="&#128155;">&#128155;</button>
+      <button class="emoji-item" data-emoji="&#128154;">&#128154;</button>
+      <button class="emoji-item" data-emoji="&#128153;">&#128153;</button>
+      <button class="emoji-item" data-emoji="&#128156;">&#128156;</button>
+      <button class="emoji-item" data-emoji="&#128420;">&#128420;</button>
+      <button class="emoji-item" data-emoji="&#128148;">&#128148;</button>
+      <button class="emoji-item" data-emoji="&#128175;">&#128175;</button>
+    </div>
+
+    <div class="emoji-panel" data-group="other">
+      <button class="emoji-item" data-emoji="&#128293;">&#128293;</button>
+      <button class="emoji-item" data-emoji="&#10024;">&#10024;</button>
+      <button class="emoji-item" data-emoji="&#11088;">&#11088;</button>
+      <button class="emoji-item" data-emoji="&#127775;">&#127775;</button>
+      <button class="emoji-item" data-emoji="&#127881;">&#127881;</button>
+      <button class="emoji-item" data-emoji="&#129395;">&#129395;</button>
+      <button class="emoji-item" data-emoji="&#9749;">&#9749;</button>
+      <button class="emoji-item" data-emoji="&#127829;">&#127829;</button>
+      <button class="emoji-item" data-emoji="&#127866;">&#127866;</button>
+      <button class="emoji-item" data-emoji="&#128663;">&#128663;</button>
+      <button class="emoji-item" data-emoji="&#128640;">&#128640;</button>
+      <button class="emoji-item" data-emoji="&#128054;">&#128054;</button>
+      <button class="emoji-item" data-emoji="&#128049;">&#128049;</button>
+      <button class="emoji-item" data-emoji="&#127752;">&#127752;</button>
+      <button class="emoji-item" data-emoji="&#127763;">&#127763;</button>
+    </div>
+
+    {{!-- N.B. прикрутить переклюк к табам эмодзи --}}
+  </div>
+</div>

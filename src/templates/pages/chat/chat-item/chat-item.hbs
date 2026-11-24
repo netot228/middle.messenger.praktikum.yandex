@@ -1,0 +1,21 @@
+<div class="chat-item">
+  <div class="chat-item-avatar">
+    {{> Avatar
+      avatarUrl=avatarUrl
+      name=name
+      class_modificator="chat-item-avatar"
+    }}
+  </div>
+  <div class="chat-item-text">
+    <div class="chat-item-text-title">
+      <div class="chat-item-text-name">{{ name }}</div>
+      <div class="chat-item-text-time">{{ lastMessage.time }}</div>
+    </div>
+
+    <div class="chat-item-text-lastmessage">{{ lastMessage.text }}</div>
+
+    {{#if unreadCount}}
+        <span class="chat-item-text-unread">{{ unreadCount }}</span>
+    {{/if}}
+  </div>
+</div>

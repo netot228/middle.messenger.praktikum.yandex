@@ -26,7 +26,7 @@
 
       &:before,
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         width: 100%;
@@ -62,7 +62,7 @@
     bottom: 0;
     right: -200px;
     width: 200px;
-    padding: 10rem 0;
+    padding: 100px 0;
 
     display: flex;
     flex-flow: column;
@@ -77,8 +77,8 @@
   }
 
   &-item {
-    padding: 0.4rem 20px 0.8rem;
-    font: 500 1.8rem/1 $sans;
+    padding: 4px 20px 8px;
+    font: 500 18px/1 $sans;
     text-align: right;
     color: var(--gray);
     border-bottom: 1px solid var(--stroke-color);

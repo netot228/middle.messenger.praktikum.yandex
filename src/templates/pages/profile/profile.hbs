@@ -1,0 +1,149 @@
+<div id="_id_profile_container" class="profile">
+  <div class="profile-aside">
+    {{!-- по клику на actionLink здесь надо делать history.go(-1) --}}
+    {{> ActionLink
+      href="/#page=chat"
+      class_modificator="back"
+    }}
+  </div>
+
+  <div class="profile-mainarea">
+    <div class="profile-data">
+
+      <form id="_id_profile_form" class="form">
+        <div class="photo">
+          {{> Avatar
+            avatarUrl=avatar
+            name=login
+          }}
+          {{> Input
+            type="file"
+            name='file'
+            input_id="_id_upload_avatar"
+            label="Загрузить картинку"
+            needLabel="true"
+            class_modificator="photo-upload"
+          }}
+        </div>
+        <div class="name">{{ login }}</div>
+
+        <div class="form-part form-profile-data">
+          {{> Input
+            type="text"
+            name="mail"
+            input_id="_id_input_mail"
+            needLabel="true"
+            label="Почта"
+            alert_message="Обязательное поле"
+            disabled="disabled"
+            value=mail
+          }}
+
+          {{> Input
+            type="text"
+            name="login"
+            input_id="_id_input_login"
+            needLabel="true"
+            label="Логин"
+            alert_message="Обязательное поле"
+            disabled="disabled"
+            value=login
+          }}
+
+          {{> Input
+            type="text"
+            name="name"
+            input_id="_id_input_name"
+            needLabel="true"
+            label="Имя"
+            alert_message="Обязательное поле"
+            disabled="disabled"
+            value=name
+            disabled="disabled"
+          }}
+
+          {{> Input
+            type="text"
+            name="surname"
+            input_id="_id_input_surname"
+            needLabel="true"
+            label="Фамилия"
+            value=surname
+            disabled="disabled"
+          }}
+
+          {{> Input
+            type="text"
+            name="phone"
+            input_id="_id_input_phone"
+            needLabel="true"
+            label="Телефон"
+            alert_message="Обязательное поле"
+            value=phone
+            disabled="disabled"
+          }}
+        </div>
+
+        <div class="form-part form-password-change">
+          {{> Input
+            type="password"
+            name="password"
+            input_id="_id_input_password_old"
+            needLabel="true"
+            label="Текущий пароль"
+            alert_message="Обязательное поле"
+            value="123456"
+          }}
+          {{> Input
+            type="password"
+            name="password"
+            input_id="_id_input_password_new"
+            needLabel="true"
+            label="Новый пароль"
+            alert_message="Обязательное поле"
+            value=""
+          }}
+
+          {{> Input
+            type="password"
+            name="password_repeat"
+            input_id="_id_input_password_new_repeat"
+            needLabel="true"
+            label="Новый пароль (еще раз)"
+            alert_message="Обязательное поле"
+            value=""
+          }}
+        </div>
+
+        {{> ActionButton
+          type="submit"
+          title="Сохранить"
+          class_modificator="profile-submit"
+        }}
+
+      </form>
+
+      <div class="action-buttons" data-id="profile_main_btns">
+
+          {{> ActionLink
+            href="/#page=profile&edit=true"
+            text="Изменить данные"
+          }}
+
+          {{> ActionLink
+            href="/#page=profile&change_pass=true"
+            text="Изменить пароль"
+          }}
+          {{> ActionLink
+            href="/"
+            text="Выйти"
+            class_modificator="accent"
+          }}
+
+        </div>
+
+    </div>
+
+  </div>
+</div>
+</div>
