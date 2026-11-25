@@ -1,5 +1,5 @@
-import { fileURLToPath, URL } from 'node:url';
-import { defineConfig } from 'vite';
+import { fileURLToPath, URL } from "node:url";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   server: {
@@ -10,7 +10,7 @@ export default defineConfig({
   resolve: {
     // прописываем алиас, чтобы корректно подключить стили для всех scss модулей
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
   css: {
