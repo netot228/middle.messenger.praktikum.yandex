@@ -29,5 +29,5 @@ __Notes
 
 
 # пока убираем pnpm признаки в гите
-pnpm-workspace.yaml
-pnpm-lock.yaml
+#pnpm-workspace.yaml
+#pnpm-lock.yaml
