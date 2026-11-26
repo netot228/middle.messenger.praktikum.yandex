@@ -1,0 +1,25 @@
+<div class="input {{ class_modificator }}" data-required="{{ required }}">
+  <input
+    id="{{ input_id }}"
+    class="input-field"
+    type="{{ type }}"
+    placeholder="{{ label }}"
+    name="{{ name }}"
+    {{ disabled }}
+    value="{{ value }}"
+    {{ required }}
+    aria-label="{{ label }}"
+    {{#if autocomplete}}
+      autocomplete = "{{ autocomplete }}"
+    {{/if}}
+  />
+
+  {{#if needLabel}}
+    <label class="input-label" for="{{ input_id }}">{{ label }}</label>
+
+    {{#if alert_message}}
+      <span class="input-alert"> {{ alert_message }} </span>
+    {{/if}}
+  {{/if}}
+
+</div>

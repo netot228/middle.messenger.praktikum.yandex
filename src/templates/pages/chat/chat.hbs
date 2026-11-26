@@ -1,0 +1,138 @@
+<div class="chat">
+  <nav class="chat-nav">
+
+    <div class="chat-nav-header">
+
+      {{> ActionLink
+        href="/#page=profile"
+        text=""
+        class_modificator="chat-setting-button"
+        aria_label="Настройки профиля"
+      }}
+
+      <form class="chat-search">
+        {{> Input
+          type="text"
+          name='search'
+          input_id="_id_input_search"
+          label="Поиск"
+          class_modificator="chat-search-field"
+        }}
+        {{> ActionButton
+          type='submit'
+          class_modificator='chat-search-button'
+          aria_label="Искать"
+        }}
+      </form>
+
+    </div>
+
+    <div class="chat-list">
+
+      <ul class="chat-list-wrapper">
+        {{#each chats}}
+          {{> ChatItem}}
+        {{/each}}
+      </ul>
+    </div>
+
+  </nav>
+  <div class="chat-mainarea">
+
+    {{#if dialog}}
+      <div class="chat-mainarea-wrapper">
+        <div class="chat-mainarea-header">
+          {{> Avatar
+            avatarUrl=dialog.avatar
+            name=dialog.title
+          }}
+          <h1 class="title">{{ dialog.title }}</h1>
+
+          <div class="menu">
+
+            {{> ActionButton
+              type='button'
+              class_modificator='menu-button'
+              aria_label="Меню чата"
+            }}
+
+            <nav class="menu-content" data-userid="{{ dialog.id }}">
+              {{> ActionButton
+                type='button'
+                class_modificator='action-link add-user'
+                aria_label="Добавить пользователя"
+                title="Добавить пользователя"
+              }}
+              {{> ActionButton
+                type='button'
+                class_modificator='action-link delete-user'
+                aria_label="Удалить пользователя"
+                title="Удалить пользователя"
+              }}
+            </nav>
+
+          </div>
+
+        </div>
+
+        <div class="chat-mainarea-dialog">
+          <ul class="chat-mainarea-dialog-wrapper">
+            {{#each dialog.messages}}
+              <li class="message {{ sender }}" data-messageid="{{ id }}">{{{ html }}}</li>
+            {{/each}}
+          </ul>
+
+        </div>
+
+        <div class="chat-mainarea-sendzone">
+          <form class="chat-mainarea-form" data-id="_id_chat_form">
+            <div class="media">
+              {{> ActionButton
+                type='button'
+                class_modificator='media-button'
+                aria_label="Загрузить медиа"
+              }}
+              <div class="media-content">
+                {{> Input
+                  type="file"
+                  name='file'
+                  input_id="_id_send_picture_to_chat"
+                  label="Загрузить картинку"
+                  needLabel="true"
+                  class_modificator="add_picture"
+                }}
+                {{> Input
+                  type="file"
+                  name='file'
+                  input_id="_id_send_file_to_chat"
+                  label="Загрузить файл"
+                  needLabel="true"
+                  class_modificator="add_file"
+                }}
+              </div>
+            </div>
+
+            <textarea
+              id="_id_chat_input"
+              name="message"
+              rows="1"
+              data-id="_id_chat_input"
+              placeholder="Сообщение"
+            ></textarea>
+
+            {{> EmojiSet}}
+
+            {{> ActionButton
+              type='submit'
+              class_modificator="send-message-button"
+              aria_label="Отправить сообщение"
+            }}
+          </form>
+        </div>
+      </div>
+    {{else}}
+      <div class="chat-mainarea-entry">Выберите чат чтобы отправить сообщение</div>
+    {{/if}}
+
+  </div>
+</div>

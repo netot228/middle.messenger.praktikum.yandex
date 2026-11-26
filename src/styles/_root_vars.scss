@@ -1,0 +1,89 @@
+@mixin setLightThemeVariables {
+  // this rule
+  // color-scheme: light dark;
+  // allows you to use function: light-dark(LightValue, DarkValue) for all css values
+
+  color-scheme: only light;
+
+  --bg-color: #f1f4fc;
+  --bg-color-light: #d5def6;
+  --bg-color-contrast: #202020;
+  --color-contrast: #f1f4fc;
+
+  --stroke-color: #dfdfdf;
+
+  --main: #333;
+  --action: #3369f3;
+  --action-hover: #5e8bff;
+  --gray: #969696;
+  --color-gray-dark: #757575;
+
+  --accent: #c9181e;
+
+  // some icons
+  --icon-search: url("/img/ui/search_bl.svg");
+  --icon-profile: url("/img/ui/profile_bl.svg");
+  --icon-paperclip: url("/img/ui/paperclip_bl.svg");
+  --icon-smile: url("/img/ui/smile_bl.svg");
+  --icon-plus: url("/img/ui/plus_bl.svg");
+  --icon-picture: url("/img/ui/picture_bl.svg");
+  --icon-file: url("/img/ui/file_bl.svg");
+  --icon-pencil: url("/img/ui/pencil_bl.svg");
+}
+%setLightThemeVariables {
+  @include setLightThemeVariables;
+}
+
+:root {
+  @include setLightThemeVariables;
+}
+
+@mixin setDarkThemeVariables {
+  color-scheme: only dark;
+
+  --bg-color: #202020;
+  --bg-color-light: #303030;
+  --bg-color-contrast: #f1f4fc;
+  --color-contrast: #202020;
+
+  --stroke-color: #5e5e5e;
+
+  --main: #ccc;
+  --action: #3369f3;
+  --action-hover: #779dff;
+  --gray: #969696;
+  --color-gray-dark: #757575;
+
+  --accent: #ff2121;
+  // some icons
+  --icon-search: url("/img/ui/search_wh.svg");
+  --icon-profile: url("/img/ui/profile_wh.svg");
+  --icon-paperclip: url("/img/ui/paperclip_wh.svg");
+  --icon-smile: url("/img/ui/smile_wh.svg");
+  --icon-plus: url("/img/ui/plus_wh.svg");
+  --icon-picture: url("/img/ui/picture_wh.svg");
+  --icon-file: url("/img/ui/file_wh.svg");
+  --icon-pencil: url("/img/ui/pencil_wh.svg");
+}
+
+%setDarkThemeVariables {
+  @include setDarkThemeVariables;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include setDarkThemeVariables;
+  }
+  :root[data-theme="light"] {
+    @include setLightThemeVariables;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include setLightThemeVariables;
+  }
+  :root[data-theme="dark"] {
+    @include setDarkThemeVariables;
+  }
+}

@@ -1,0 +1,7 @@
+.registration {
+  @extend %entryForm;
+
+  &-btn-place {
+    @extend %btnsInColumn;
+  }
+}

@@ -1,0 +1,212 @@
+<div id="_id_profile_container" class="profile">
+  <div class="profile-aside">
+
+    {{> ActionLink
+      href="/#page=chat"
+      class_modificator="back"
+    }}
+  </div>
+
+  <div class="profile-mainarea">
+    <div class="profile-data">
+
+      <form class="form form-avatar-change">
+        <div class="photo">
+
+          <div class="photo-wrapper">
+            {{> Avatar
+              avatarUrl=avatar
+              name=login
+            }}
+
+          </div>
+          {{> ActionButton
+            type="button"
+            title=""
+            class_modificator="photo-change-btn"
+            aria_label="Сменить аватар"
+          }}
+
+          <div class="photo-modal modal">
+            <div class="modal-curtain"></div>
+            <div class="photo-modal-wrapper modal-wrapper">
+              <div class="photo-modal-title">Загрузить новый аватар</div>
+              {{> Input
+                type="file"
+                name="file"
+                input_id="_id_upload_avatar"
+                label="Выберите файл"
+                needLabel="true"
+                class_modificator="photo-upload"
+              }}
+              {{> ActionButton
+                type="submit"
+                title="Поменять аватар"
+                aria_label="Поменять аватар"
+                class_modificator="profile-change-avatar-submit"
+              }}
+            </div>
+          </div>
+
+        </div>
+        <h1 class="name">{{ display_name }}</h1>
+      </form>
+      <form class="form form-profile-data">
+
+          {{> Input
+            type="text"
+            name="email"
+            input_id="_id_input_email"
+            needLabel="true"
+            label="Почта"
+            alert_message="Обязательное поле"
+            disabled="disabled"
+            value=email
+            autocomplete="email"
+          }}
+
+          {{> Input
+            type="text"
+            name="login"
+            input_id="_id_input_login"
+            needLabel="true"
+            label="Логин"
+            alert_message="Обязательное поле"
+            disabled="disabled"
+            value=login
+            autocomplete="username"
+          }}
+
+          {{> Input
+            type="text"
+            name="first_name"
+            input_id="_id_input_first_name"
+            needLabel="true"
+            label="Имя"
+            alert_message="Обязательное поле"
+            disabled="disabled"
+            value=first_name
+            autocomplete="given-name"
+          }}
+
+          {{> Input
+            type="text"
+            name="second_name"
+            input_id="_id_input_second_name"
+            needLabel="true"
+            label="Фамилия"
+            value=second_name
+            disabled="disabled"
+            autocomplete="family-name"
+          }}
+
+          {{> Input
+            type="text"
+            name="display_name"
+            input_id="_id_input_display_name"
+            needLabel="true"
+            label="Имя в чате"
+            value=display_name
+            disabled="disabled"
+          }}
+
+          {{> Input
+            type="text"
+            name="phone"
+            input_id="_id_input_phone"
+            needLabel="true"
+            label="Телефон"
+            alert_message="Обязательное поле"
+            value=phone
+            disabled="disabled"
+            autocomplete="tel"
+          }}
+
+          {{> ActionButton
+            type="submit"
+            title="Изменить данные"
+            class_modificator="profile-submit profile-change-data-submit"
+            aria_label="Изменить данные"
+          }}
+          {{> ActionLink
+            href="/#page=profile"
+            text="Отмена"
+            aria_label="Отмена"
+            class_modificator="profile-submit-cancel"
+          }}
+
+
+      </form>
+
+      <form class="form form-password-change">
+
+        {{> Input
+          type="password"
+          name="old_password"
+          input_id="_id_input_old_password"
+          needLabel="true"
+          label="Текущий пароль"
+          alert_message="Обязательное поле"
+          value="123456"
+        }}
+        {{> Input
+          type="password"
+          name="new_password"
+          input_id="_id_input_new_password"
+          needLabel="true"
+          label="Новый пароль"
+          alert_message="Обязательное поле"
+          value=""
+        }}
+
+        {{> Input
+          type="password"
+          name="new_password_confirm"
+          input_id="_id_input_password_new_password_confirm"
+          needLabel="true"
+          label="Новый пароль (еще раз)"
+          alert_message="Обязательное поле"
+          value=""
+        }}
+
+        {{> ActionButton
+          type="submit"
+          title="Сменить пароль"
+          class_modificator="profile-submit profile-change-pass-submit"
+          aria_label="Сменить пароль"
+        }}
+        {{> ActionLink
+          href="/#page=profile"
+          text="Отмена"
+          aria_label="Отмена"
+          class_modificator="profile-submit-cancel"
+        }}
+
+      </form>
+
+      <nav class="action-buttons" data-id="profile_main_btns">
+
+          {{> ActionLink
+            href="/#page=profile&edit=true"
+            text="Изменить данные"
+            aria_label="Изменить данные"
+          }}
+
+          {{> ActionLink
+            href="/#page=profile&change_pass=true"
+            text="Изменить пароль"
+            aria_label="Изменить пароль"
+          }}
+          {{> ActionLink
+            href="/"
+            text="Выйти"
+            class_modificator="accent"
+            aria_label="Выйти"
+          }}
+
+        </nav>
+
+    </div>
+
+  </div>
+</div>

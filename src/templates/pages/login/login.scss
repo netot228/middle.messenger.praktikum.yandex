@@ -1,0 +1,7 @@
+.login {
+  @extend %entryForm;
+
+  &-btn-place {
+    @extend %btnsInColumn;
+  }
+}

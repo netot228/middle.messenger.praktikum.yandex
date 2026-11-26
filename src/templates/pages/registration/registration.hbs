@@ -1,0 +1,96 @@
+<div class="registration">
+
+  <form class="form">
+
+    <h1 class="form-title">{{ title }}</h1>
+
+    {{> Input
+      type="text"
+      name="email"
+      input_id="_id_input_mail"
+      needLabel="true"
+      label="Почта"
+      alert_message="Укажите почту"
+      required="required"
+      autocomplete="email"
+    }}
+
+    {{> Input
+      type="text"
+      name="login"
+      input_id="_id_input_login"
+      needLabel="true"
+      label="Логин"
+      alert_message="Обязательное поле"
+      required="required"
+      autocomplete="username"
+    }}
+
+    {{> Input
+      type="text"
+      name="first_name"
+      input_id="_id_input_name"
+      needLabel="true"
+      label="Имя"
+      autocomplete="given-name"
+    }}
+
+    {{> Input
+      type="text"
+      name="second_name"
+      input_id="_id_input_surname"
+      needLabel="true"
+      label="Фамилия"
+      autocomplete="family-name"
+    }}
+
+    {{> Input
+      type="text"
+      name="phone"
+      input_id="_id_input_phone"
+      needLabel="true"
+      label="Телефон"
+      alert_message="Укажите свой телефон"
+      required="required"
+      autocomplete="tel"
+    }}
+
+    {{> Input
+      type="password"
+      name="password"
+      input_id="_id_input_password"
+      needLabel="true"
+      label="Пароль"
+      alert_message="Обязательное поле"
+      required="required"
+    }}
+
+    {{> Input
+      type="password"
+      name="password_repeat"
+      input_id="_id_input_password_repeat"
+      needLabel="true"
+      label="Пароль (еще раз)"
+      alert_message="Обязательное поле"
+      required="required"
+    }}
+
+    <div class="login-btn-place">
+      {{> ActionButton
+        type='submit'
+        title="Зарегистрироваться"
+        class_modificator="registration_submit"
+        aria_label="Зарегистрироваться"
+      }}
+
+      {{> ActionLink
+        href="/#page=login"
+        text="Войти"
+        class_modificator="likeBtn"
+        aria_label="Войти"
+      }}
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,8 @@
+<div class="avatar {{ class_modificator }}">
+  {{#if avatarUrl}}
+    <img src="{{ avatarUrl }}" alt="{{ name }}" />
+  {{else}}
+    {{!-- можно добавить сюда рандомный бэкграунд для юзера --}}
+    {{{getInitials name}}}
+  {{/if}}
+</div>
