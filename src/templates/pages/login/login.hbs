@@ -1,42 +1,44 @@
 <div class="login">
 
-  <!-- выводим статику с формой без экшенов на сабмит -->
   <form class="form">
 
     <h1 class="form-title">{{ title }}</h1>
 
     {{> Input
       type="text"
-      name='login'
+      name="login"
       input_id="_id_input_login"
       needLabel="true"
       label="Логин"
       alert_message="Заполните Логин"
       required="required"
+      autocomplete="username"
     }}
 
     {{> Input
       type="password"
-      name='password'
+      name="password"
       input_id="_id_input_password"
       needLabel="true"
       label="Пароль"
       alert_message="Обязательное поле"
       required="required"
+      autocomplete="current-password"
     }}
 
     <div class="login-btn-place">
-      <!--  ActionButton пока будет просто button -->
       {{> ActionButton
-        type='submit'
+        type="submit"
         title="Войти"
         class_modificator="login_submit"
+        aria_label="Войти"
       }}
-      {{!-- пока навигацию будем делать через хеш --}}
+
       {{> ActionLink
         href="/#page=registration"
         text="Регистрация"
         class_modificator="likeBtn"
+        aria_label="Зарегистрироваться"
       }}
     </div>
 

@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "start": "vite && vite build"
+    "start": "vite build && vite preview"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

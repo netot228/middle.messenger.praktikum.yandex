@@ -170,3 +170,29 @@ body {
     color: var(--action-hover);
   }
 }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-curtain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: var(--bg-color);
+    opacity: 0.7;
+  }
+  &-wrapper {
+    display: inline-flex;
+    z-index: 10;
+  }
+}

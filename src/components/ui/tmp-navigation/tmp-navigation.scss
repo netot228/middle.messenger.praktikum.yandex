@@ -68,7 +68,9 @@
     flex-flow: column;
     align-items: stretch;
     justify-content: start;
-    gap: $gap * 3;
+    // gap: $gap * 2;
+
+    list-style: none;
 
     opacity: 0;
     transition:
@@ -77,15 +79,37 @@
   }
 
   &-item {
-    padding: 4px 20px 8px;
+    position: relative;
     font: 500 18px/1 $sans;
     text-align: right;
     color: var(--gray);
     border-bottom: 1px solid var(--stroke-color);
     transition: color 0.3s ease;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--bg-color-contrast);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    a {
+      position: relative;
+      z-index: 11;
+      display: block;
+      padding: 12px 20px 8px;
+      width: 100%;
+    }
 
     &:hover {
       color: var(--main);
+      &:before {
+        opacity: 0.1;
+      }
     }
   }
 

@@ -73,7 +73,7 @@
 
 ### Ветка проекта sprint_1 была задеплоена на Netlify без ошибок
 
-[Preview проекта на Netlify](https://6b06cb281298c266402c6e3e--whimsical-sundae-bc8094.netlify.app/)
+[Preview проекта на Netlify](https://whimsical-sundae-bc8094.netlify.app/)
 
 ![Скрин результата деплоя](/screens_set/deploy_sprint_1.jpg)
 

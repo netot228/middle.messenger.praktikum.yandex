@@ -18,7 +18,7 @@ $settingHeight: 34px;
     opacity: 0.1;
   }
 
-  &-aside {
+  &-nav {
     position: absolute;
     top: $gap;
     bottom: $gap;
@@ -59,13 +59,9 @@ $settingHeight: 34px;
     background-repeat: no-repeat;
     background-size: 24px;
     background-position: 50%;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
     &:hover {
-      background-color: var(--gray);
-      background-image: var(--icon-profile);
-      background-repeat: no-repeat;
-      background-size: 24px;
-      background-position: 50%;
+      background-color: var(--bg-color);
     }
   }
 
@@ -382,6 +378,7 @@ $settingHeight: 34px;
             white-space: nowrap;
             color: var(--main);
             opacity: 0.4;
+            background-color: transparent;
             transition: opacity 0.3s ease;
 
             &:hover {
@@ -499,9 +496,11 @@ $settingHeight: 34px;
         transition: background-color 0.3s ease;
 
         &:hover {
-          background-color: var(--bg-color);
           .media-button {
-            opacity: 0.6;
+            background-color: var(--bg-color);
+            &:before {
+              opacity: 0.6;
+            }
           }
           .media-content {
             padding: 10px 16px 64px 4px;
@@ -598,14 +597,26 @@ $settingHeight: 34px;
           left: 0;
           right: 0;
           bottom: 0;
-          background: var(--icon-paperclip) no-repeat 50%;
-          background-size: 24px;
           font-size: 0;
           color: transparent;
-          transform: translateY(0);
-          opacity: 0.4;
+          border-radius: 50%;
           cursor: pointer;
-          transition: opacity 0.3s ease;
+          background-color: transparent;
+          transition: background-color 0.3s ease;
+
+          &:before {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--icon-paperclip) no-repeat 50%;
+            background-size: 24px;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+          }
         }
       }
 

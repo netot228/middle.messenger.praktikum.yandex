@@ -1,12 +1,20 @@
 <!-- это заглушка для навигации, она временная пока нет роутинга }} -->
-<div class="navigator">
+<nav class="navigator">
   <button class="navigator-btn"> <span></span> </button>
-  <nav class="navigator-menu">
-    <a class="navigator-item" href="/#page=login">Вход</a>
-    <a class="navigator-item" href="/#page=registration">Регистрация</a>
-    <a class="navigator-item" href="/#page=profile">Профиль</a>
-    <a class="navigator-item" href="/#page=chat">Страница чата</a>
-    <a class="navigator-item" href="/#page=404">404</a>
-    <a class="navigator-item" href="/#page=5xx">5xx</a>
-  </nav>
-</div>
+
+  <ul class="navigator-menu">
+    <li class="navigator-item"><a href="/#page=login" title="Вход" aria-label="Вход">Вход</a></li>
+    <li class="navigator-item">
+      <a href="/#page=registration" title="Регистрация" aria-label="Регистрация">Регистрация</a>
+    </li>
+    <li class="navigator-item">
+      <a href="/#page=profile" title="Профиль" aria-label="Профиль">Профиль</a>
+    </li>
+    <li class="navigator-item">
+      <a href="/#page=chat" title="Страница чата" aria-label="Страница чата">Страница чата</a>
+    </li>
+    <li class="navigator-item"><a href="/#page=404" title="404" aria-label="404">404</a></li>
+    <li class="navigator-item"><a href="/#page=5xx" title="5xx" aria-label="5xx">5xx</a></li>
+  </ul>
+
+</nav>

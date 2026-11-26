@@ -8,6 +8,10 @@
     {{ disabled }}
     value="{{ value }}"
     {{ required }}
+    aria-label="{{ label }}"
+    {{#if autocomplete}}
+      autocomplete = "{{ autocomplete }}"
+    {{/if}}
   />
 
   {{#if needLabel}}

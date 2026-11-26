@@ -1,6 +1,5 @@
 <div class="registration">
 
-  <!-- выводим статику с формой без экшенов на сабмит -->
   <form class="form">
 
     <h1 class="form-title">{{ title }}</h1>
@@ -13,6 +12,7 @@
       label="Почта"
       alert_message="Укажите почту"
       required="required"
+      autocomplete="email"
     }}
 
     {{> Input
@@ -23,6 +23,7 @@
       label="Логин"
       alert_message="Обязательное поле"
       required="required"
+      autocomplete="username"
     }}
 
     {{> Input
@@ -31,6 +32,7 @@
       input_id="_id_input_name"
       needLabel="true"
       label="Имя"
+      autocomplete="given-name"
     }}
 
     {{> Input
@@ -39,6 +41,7 @@
       input_id="_id_input_surname"
       needLabel="true"
       label="Фамилия"
+      autocomplete="family-name"
     }}
 
     {{> Input
@@ -49,6 +52,7 @@
       label="Телефон"
       alert_message="Укажите свой телефон"
       required="required"
+      autocomplete="tel"
     }}
 
     {{> Input
@@ -76,12 +80,14 @@
         type='submit'
         title="Зарегистрироваться"
         class_modificator="registration_submit"
+        aria_label="Зарегистрироваться"
       }}
 
       {{> ActionLink
         href="/#page=login"
         text="Войти"
         class_modificator="likeBtn"
+        aria_label="Войти"
       }}
     </div>
 

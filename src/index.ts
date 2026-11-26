@@ -14,36 +14,37 @@ import renderMenu from "./components/ui/tmp-navigation/tmp-navigation";
 registerAllPartials();
 
 const app = document.getElementById("app");
-if (!app) throw new Error('Проверь структуру index.html, в нем должен быть элемент с id="app"');
+if (!app) {
+  throw new Error('Проверь структуру index.html, в нем должен быть элемент с id="app"');
+}
 
 // временная замена роутинга ибо пока до этого не дошли
 function routeByParams(root: HTMLElement) {
-  root.innerHTML = "";
   const searchParams = new URLSearchParams(window.location.hash.replace("#", ""));
 
   const page = searchParams.get("page");
 
   switch (page) {
     case "login":
-      root.append(renderLogin());
+      root.replaceChildren(renderLogin());
       break;
     case "registration":
-      root.append(renderRegistration());
+      root.replaceChildren(renderRegistration());
       break;
     case "chat":
-      root.append(renderChat());
+      root.replaceChildren(renderChat());
       break;
     case "profile":
-      root.append(renderProfile());
+      root.replaceChildren(renderProfile());
       break;
     case "404":
-      root.append(render404());
+      root.replaceChildren(render404());
       break;
     case "5xx":
-      root.append(render5xx());
+      root.replaceChildren(render5xx());
       break;
     default:
-      root.append(renderLogin());
+      root.replaceChildren(renderLogin());
   }
 
   root.append(renderMenu());

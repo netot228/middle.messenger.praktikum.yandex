@@ -7,6 +7,11 @@ export default defineConfig({
     strictPort: true,
     open: true,
   },
+  preview: {
+    port: 3000,
+    open: true,
+    strictPort: true,
+  },
   resolve: {
     // прописываем алиас, чтобы корректно подключить стили для всех scss модулей
     alias: {

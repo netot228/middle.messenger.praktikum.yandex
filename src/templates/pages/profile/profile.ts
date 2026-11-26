@@ -35,7 +35,23 @@ export default function renderProfile(): HTMLElement {
 
   const searchParams = new URLSearchParams(window.location.hash.replace("#", ""));
   const profileEl = container.querySelector<HTMLDivElement>("#_id_profile_container")!;
-  const profileSubmit = profileEl.querySelector<HTMLDivElement>(".profile-submit");
+  const avatarForm = profileEl.querySelector<HTMLFormElement>(".form-avatar-change");
+  const mainForm = profileEl.querySelector<HTMLFormElement>(".form-profile-data");
+  const passForm = profileEl.querySelector<HTMLFormElement>(".form-password-change");
+  const editAvatarBtn = profileEl.querySelector<HTMLButtonElement>(".photo-change-btn");
+  const modalChangeAvatar = profileEl.querySelector<HTMLDivElement>(".photo-modal");
+  const modalCloseArea = profileEl.querySelector<HTMLDivElement>(".photo-modal .modal-curtain");
+
+  editAvatarBtn?.addEventListener("click", e => {
+    e.preventDefault();
+
+    console.log("editavatar");
+    console.dir(modalChangeAvatar);
+    modalChangeAvatar?.classList.add("show");
+  });
+  modalCloseArea?.addEventListener("click", e => {
+    modalChangeAvatar?.classList.remove("show");
+  });
 
   if (searchParams.has("edit")) {
     profileEl.classList.add("form-edit");
@@ -56,12 +72,16 @@ export default function renderProfile(): HTMLElement {
     profileEl.classList.add("form-change-pass");
   }
 
-  // временно, после клика по кнопке сохранения вернуться к странице профиля
-  // пока ничего не меняем, нигде не сохраняем, просто вернем обратно
-  profileSubmit?.addEventListener("click", e => {
+  function tmpSubmitHolder(e: SubmitEvent): void {
     e.preventDefault();
     window.location.href = "/#page=profile";
-  });
+    modalChangeAvatar?.classList.remove("show");
+  }
+  // временно, после клика по кнопке сохранения вернуться к странице профиля
+  // пока ничего не меняем, нигде не сохраняем, просто вернем обратно
+  avatarForm?.addEventListener("submit", tmpSubmitHolder);
+  mainForm?.addEventListener("submit", tmpSubmitHolder);
+  passForm?.addEventListener("submit", tmpSubmitHolder);
 
   return container;
 }

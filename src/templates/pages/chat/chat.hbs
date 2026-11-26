@@ -1,12 +1,13 @@
 <div class="chat">
-  <div class="chat-aside">
+  <nav class="chat-nav">
 
-    <aside class="chat-aside-header">
+    <div class="chat-nav-header">
 
       {{> ActionLink
         href="/#page=profile"
         text=""
         class_modificator="chat-setting-button"
+        aria_label="Настройки профиля"
       }}
 
       <form class="chat-search">
@@ -20,21 +21,22 @@
         {{> ActionButton
           type='submit'
           class_modificator='chat-search-button'
+          aria_label="Искать"
         }}
       </form>
 
-    </aside>
+    </div>
 
-    <nav class="chat-list">
+    <div class="chat-list">
 
       <ul class="chat-list-wrapper">
         {{#each chats}}
           {{> ChatItem}}
         {{/each}}
       </ul>
-    </nav>
+    </div>
 
-  </div>
+  </nav>
   <div class="chat-mainarea">
 
     {{#if dialog}}
@@ -47,26 +49,30 @@
           <h1 class="title">{{ dialog.title }}</h1>
 
           <div class="menu">
-            {{!-- открытие меню пока по ховеру --}}
+
             {{> ActionButton
               type='button'
               class_modificator='menu-button'
+              aria_label="Меню чата"
             }}
 
-            <div class="menu-content" data-userid="{{ dialog.id }}">
-              {{> ActionLink
-                href="/#page=chat&user_add=true"
-                text="Добавить пользователя"
-                class_modificator="add-user"
+            <nav class="menu-content" data-userid="{{ dialog.id }}">
+              {{> ActionButton
+                type='button'
+                class_modificator='action-link add-user'
+                aria_label="Добавить пользователя"
+                title="Добавить пользователя"
               }}
-              {{!-- пока непонтяно как в строку параметра подставить значение переменной {{ dialog.id }} --}}
-              {{> ActionLink
-                href="/#page=chat&user_delete=true&id=123"
-                text="Удалить пользователя"
-                class_modificator="delete-user"
+              {{> ActionButton
+                type='button'
+                class_modificator='action-link delete-user'
+                aria_label="Удалить пользователя"
+                title="Удалить пользователя"
               }}
-            </div>
+            </nav>
+
           </div>
+
         </div>
 
         <div class="chat-mainarea-dialog">
@@ -81,10 +87,10 @@
         <div class="chat-mainarea-sendzone">
           <form class="chat-mainarea-form" data-id="_id_chat_form">
             <div class="media">
-              {{!-- открытие меню пока по ховеру --}}
               {{> ActionButton
                 type='button'
                 class_modificator='media-button'
+                aria_label="Загрузить медиа"
               }}
               <div class="media-content">
                 {{> Input
@@ -119,6 +125,7 @@
             {{> ActionButton
               type='submit'
               class_modificator="send-message-button"
+              aria_label="Отправить сообщение"
             }}
           </form>
         </div>
