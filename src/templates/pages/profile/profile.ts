@@ -49,7 +49,7 @@ export default function renderProfile(): HTMLElement {
     console.dir(modalChangeAvatar);
     modalChangeAvatar?.classList.add("show");
   });
-  modalCloseArea?.addEventListener("click", e => {
+  modalCloseArea?.addEventListener("click", () => {
     modalChangeAvatar?.classList.remove("show");
   });
 
