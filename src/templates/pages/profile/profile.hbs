@@ -10,7 +10,7 @@
   <div class="profile-mainarea">
     <div class="profile-data">
 
-      <form id="_id_profile_form" class="form">
+      <form id="_id_profile_avatar_form" class="form">
         <div class="photo">
           {{> Avatar
             avatarUrl=avatar
@@ -25,18 +25,20 @@
             class_modificator="photo-upload"
           }}
         </div>
-        <div class="name">{{ login }}</div>
+        <h1 class="name">{{ display_name }}</h1>
+      </form>
+      <form id="_id_profile_main_form" class="form">
 
         <div class="form-part form-profile-data">
           {{> Input
             type="text"
-            name="mail"
-            input_id="_id_input_mail"
+            name="email"
+            input_id="_id_input_email"
             needLabel="true"
             label="Почта"
             alert_message="Обязательное поле"
             disabled="disabled"
-            value=mail
+            value=email
           }}
 
           {{> Input
@@ -52,23 +54,33 @@
 
           {{> Input
             type="text"
-            name="name"
-            input_id="_id_input_name"
+            name="first_name"
+            input_id="_id_input_first_name"
             needLabel="true"
             label="Имя"
             alert_message="Обязательное поле"
             disabled="disabled"
-            value=name
+            value=first_name
             disabled="disabled"
           }}
 
           {{> Input
             type="text"
-            name="surname"
-            input_id="_id_input_surname"
+            name="second_name"
+            input_id="_id_input_second_name"
             needLabel="true"
             label="Фамилия"
-            value=surname
+            value=second_name
+            disabled="disabled"
+          }}
+
+          {{> Input
+            type="text"
+            name="display_name"
+            input_id="_id_input_display_name"
+            needLabel="true"
+            label="Имя в чате"
+            value=display_name
             disabled="disabled"
           }}
 
@@ -84,11 +96,14 @@
           }}
         </div>
 
+      </form>
+
+      <form id="_id_profile_pass_form" class="form">
         <div class="form-part form-password-change">
           {{> Input
             type="password"
-            name="password"
-            input_id="_id_input_password_old"
+            name="old_password"
+            input_id="_id_input_old_password"
             needLabel="true"
             label="Текущий пароль"
             alert_message="Обязательное поле"
@@ -96,8 +111,8 @@
           }}
           {{> Input
             type="password"
-            name="password"
-            input_id="_id_input_password_new"
+            name="new_password"
+            input_id="_id_input_new_password"
             needLabel="true"
             label="Новый пароль"
             alert_message="Обязательное поле"
@@ -106,8 +121,8 @@
 
           {{> Input
             type="password"
-            name="password_repeat"
-            input_id="_id_input_password_new_repeat"
+            name="new_password_confirm"
+            input_id="_id_input_password_new_password_confirm"
             needLabel="true"
             label="Новый пароль (еще раз)"
             alert_message="Обязательное поле"

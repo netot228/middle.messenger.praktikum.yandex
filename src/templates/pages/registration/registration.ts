@@ -11,12 +11,9 @@ export default function renderRegistration(): HTMLElement {
   const container = document.createElement("main");
   container.innerHTML = tmpl({ title: "Регистрация" });
 
-  // здесь я пока продублирую логику показа обязательных полей из логина
-  // позже у каждого компонента будет свой обработчик
-  // временно обработаем показ уведомления об обязательности ввода поля
-  const loginSubmit = container.querySelector<HTMLDivElement>(".registration_submit");
-  if (loginSubmit) {
-    loginSubmit.addEventListener("click", e => {
+  const registrationSubmit = container.querySelector<HTMLButtonElement>(".registration_submit");
+  if (registrationSubmit) {
+    registrationSubmit.addEventListener("click", e => {
       e.preventDefault();
 
       container

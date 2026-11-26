@@ -3,11 +3,6 @@
 
     <aside class="chat-aside-header">
 
-      {{!-- {{> ActionButton
-        type='button'
-        class_modificator='chat-setting-button'
-      }} --}}
-
       {{> ActionLink
         href="/#page=profile"
         text=""
@@ -30,14 +25,14 @@
 
     </aside>
 
-    <div class="chat-list">
+    <nav class="chat-list">
 
-      <div class="chat-list-wrapper">
+      <ul class="chat-list-wrapper">
         {{#each chats}}
           {{> ChatItem}}
         {{/each}}
-      </div>
-    </div>
+      </ul>
+    </nav>
 
   </div>
   <div class="chat-mainarea">
@@ -49,7 +44,7 @@
             avatarUrl=dialog.avatar
             name=dialog.title
           }}
-          <div class="title">{{ dialog.title }}</div>
+          <h1 class="title">{{ dialog.title }}</h1>
 
           <div class="menu">
             {{!-- открытие меню пока по ховеру --}}
@@ -75,16 +70,16 @@
         </div>
 
         <div class="chat-mainarea-dialog">
-          <div class="chat-mainarea-dialog-wrapper">
+          <ul class="chat-mainarea-dialog-wrapper">
             {{#each dialog.messages}}
-              <div class="message {{ sender }}" data-messageid="{{ id }}">{{{ html }}}</div>
+              <li class="message {{ sender }}" data-messageid="{{ id }}">{{{ html }}}</li>
             {{/each}}
-          </div>
+          </ul>
 
         </div>
 
         <div class="chat-mainarea-sendzone">
-          <form class="chat-mainarea-form" action="" data-id="_id_chat_form">
+          <form class="chat-mainarea-form" data-id="_id_chat_form">
             <div class="media">
               {{!-- открытие меню пока по ховеру --}}
               {{> ActionButton
@@ -113,13 +108,18 @@
 
             <textarea
               id="_id_chat_input"
-              name=""
+              name="message"
               rows="1"
               data-id="_id_chat_input"
               placeholder="Сообщение"
             ></textarea>
 
             {{> EmojiSet}}
+
+            {{> ActionButton
+              type='submit'
+              class_modificator="send-message-button"
+            }}
           </form>
         </div>
       </div>

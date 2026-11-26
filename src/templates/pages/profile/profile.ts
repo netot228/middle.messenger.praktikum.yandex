@@ -6,10 +6,11 @@ const tmpl = Handlebars.compile(template);
 
 interface ProfileData {
   id: string;
-  mail: string;
+  email: string;
   login: string;
-  name: string;
-  surname?: string;
+  display_name: string;
+  first_name: string;
+  second_name?: string;
   phone?: string; // надо заменить на number и добавить форматирование значения на выводе
   avatar?: string;
 }
@@ -17,10 +18,11 @@ interface ProfileData {
 // tmp profileData
 const profileData: ProfileData = {
   id: "121313",
-  mail: "eric.cartman@gmail.com",
-  login: "Eric Theodore Cartman",
-  name: "Eric",
-  surname: "Cartman",
+  email: "eric.cartman@gmail.com",
+  login: "Cartman",
+  display_name: "Eric Theodore Cartman",
+  first_name: "Eric",
+  second_name: "Cartman",
   phone: "+7 (977) 123-45-67",
   avatar: "/img/tmp_avatars/profile.jpg",
 };

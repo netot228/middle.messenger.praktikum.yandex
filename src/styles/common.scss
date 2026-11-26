@@ -1,3 +1,4 @@
+@use "root_vars" as *;
 @use "reset";
 
 html,
@@ -13,6 +14,15 @@ body {
   ::selection {
     color: var(--color-contrast);
     background-color: var(--bg-color-contrast);
+  }
+}
+
+@for $i from 1 through 10 {
+  .pt#{$i} {
+    padding-top: calc(#{$i}*#{$gap});
+  }
+  .mb#{$i} {
+    margin-bottom: calc(#{$i}*#{$gap});
   }
 }
 

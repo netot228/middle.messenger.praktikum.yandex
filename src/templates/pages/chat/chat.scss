@@ -429,6 +429,7 @@ $settingHeight: 34px;
         flex-flow: column;
         align-items: center;
         justify-content: end;
+        padding-bottom: 40px;
         gap: $gap * 3;
 
         .message {
@@ -453,6 +454,7 @@ $settingHeight: 34px;
             align-self: end;
             border-radius: 10px 10px 0 10px;
             background: linear-gradient(135deg, rgb(131, 77, 206) 5%, rgb(43, 18, 94) 95%);
+            white-space: pre-wrap;
           }
           &.companion {
             align-self: start;
@@ -483,13 +485,14 @@ $settingHeight: 34px;
       display: flex;
       flex-flow: row;
       align-items: center;
-      gap: $gap * 2;
+      gap: $gap;
 
       .media {
         position: relative;
         z-index: 1;
         width: 34px;
         height: 34px;
+        flex-shrink: 0;
         cursor: pointer;
         border-radius: 50%;
         background-color: transparent;
@@ -630,6 +633,7 @@ $settingHeight: 34px;
         width: 34px;
         height: 34px;
         border-radius: 50%;
+        flex-shrink: 0;
         // background-color: red;
 
         &-button {
@@ -665,8 +669,10 @@ $settingHeight: 34px;
           }
 
           .emoji-data {
-            width: fit-content;
-            height: fit-content;
+            // width: fit-content;
+            // height: fit-content;
+            min-width: 300px;
+            min-height: 260px;
             padding: 8px 8px 34px;
             opacity: 1;
           }
@@ -737,6 +743,38 @@ $settingHeight: 34px;
 
         &-item:hover {
           background: var(--bg-color-contrast);
+        }
+      }
+
+      .send-message-button {
+        position: relative;
+        display: inline-flex;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 12px;
+          height: 12px;
+          margin: auto;
+          border-radius: 0 4px 0 0;
+          border-top: 2px solid $light;
+          border-right: 2px solid $light;
+          transform: translateX(-2px) rotate(45deg);
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          background-color: var(--action-hover);
+          &:before {
+            transform: translateX(0px) rotate(45deg);
+          }
         }
       }
     }

@@ -12,7 +12,7 @@ export default function renderLogin(): HTMLElement {
   container.innerHTML = tmpl({ title: "Вход" });
 
   // временно обработаем показ уведомления об обязательности ввода поля
-  const loginSubmit = container.querySelector<HTMLDivElement>(".login_submit");
+  const loginSubmit = container.querySelector<HTMLButtonElement>(".login_submit");
   if (loginSubmit) {
     loginSubmit.addEventListener("click", e => {
       e.preventDefault();

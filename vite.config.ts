@@ -17,7 +17,7 @@ export default defineConfig({
     preprocessorOptions: {
       // добавляем настройку, чтобы во все .scss файлы подключались переменные
       scss: {
-        additionalData: `@use "@/styles/_vars" as *;`,
+        additionalData: `@use "@/styles/_scss_vars" as *;`,
       },
     },
   },

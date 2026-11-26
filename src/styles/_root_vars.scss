@@ -1,20 +1,3 @@
-$gap: 8px;
-@for $i from 1 through 10 {
-  .pt#{$i} {
-    padding-top: calc(#{$i}*#{$gap});
-  }
-  .mb#{$i} {
-    margin-bottom: calc(#{$i}*#{$gap});
-  }
-}
-
-$sans: "Source Sans 3", sans-serif;
-$serif: georgia, serif;
-
-// неизменяемые цвета не зависят от цветовой схемы
-$light: #f1f4fc;
-$dark: #202020;
-
 @mixin setLightThemeVariables {
   // this rule
   // color-scheme: light dark;
@@ -102,44 +85,5 @@ $dark: #202020;
   }
   :root[data-theme="dark"] {
     @include setDarkThemeVariables;
-  }
-}
-
-// миксин для кастомизации под
-
-@mixin screenW($size) {
-  @media screen and (max-width: $size) {
-    @content;
-  }
-}
-
-@mixin screenH($size) {
-  @media screen and (max-height: $size) {
-    @content;
-  }
-}
-
-// базовые extends для некоторых повторяющихся элементов
-%entryForm {
-  position: relative;
-  margin: auto;
-  padding: 20px 0 20px 30px;
-  border-left: 2px solid var(--stroke-color);
-  width: 340px;
-}
-
-// сделаем миксин для скролбара только для вертикального
-@mixin useDecorateScrollBar($trackColor, $thumbColor) {
-  // базовые настройки скролбара поддержка большинством браузеров
-  scrollbar-color: $thumbColor $trackColor;
-  scrollbar-width: thin;
-  scrollbar-gutter: stable;
-  // ставим чтобы прилипал по оси y
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-
-  // чтобы потомок прилипал вначале
-  & > * {
-    scroll-snap-align: start;
   }
 }
